@@ -20,7 +20,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: $PYTHON_VERSION
+        python-version: ${{ env.PYTHON_VERSION }}
 
     - name: Create virtual environment
       run: |
@@ -29,7 +29,7 @@ jobs:
       
     - name: Install dependencies
       run: |
-        pip install -r $REQUIREMENTS_FILE
+        pip install -r ${{ env.REQUIREMENTS_FILE }}
 
     - name: Cache dependencies
       uses: actions/cache@v2
